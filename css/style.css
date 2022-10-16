@@ -40,11 +40,15 @@ header{
     font-family: 'Nanum Gothic', sans-serif;
 }
 
+.search-box-text{
+  width:250px;
+}
+
 .search-button {
   font-size: 18px;
   border: none;
   
-  width: 50px;
+  width: 30px;
   height: 30px;
   border-radius: 15px;
   color: #fff;
@@ -414,6 +418,9 @@ footer{
 @media (max-width: 599px){
     .logo-text{
         display: none;
+    }
+    .search-box-text{
+      width:180px;
     }
 }
 
