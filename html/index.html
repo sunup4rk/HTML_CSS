@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>칼로리도감 | Calodex</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="shortcut icon" href="../img/logo3.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="sticky-top">
+        <div class="container">
+
+            <div class="row">                
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../img/logo3.png">
+                    </a>            
+                </div> 
+                <div class="logo-text">
+                    
+                    <h1 class="card-title">
+                        <a href="index.html">Calo</a>
+                    </h1>
+                    <h1 class="card-title" >
+                        <a href="index.html">dex&nbsp;</a>
+                    </h1>
+                </div>
+                
+            </div>
+                        
+            <div class="search-box">
+                <h1 class="card-title">
+                    <a href="index.html">칼로리도감</a>
+                </h1>
+                <br>
+                <form action="search-result.html" name="product" method="get">
+                    <input class="search-box-text" type="text" placeholder="검색어를 입력해 주세요">
+                    <button class="search-button" type="summit" onclick="location.href = 'search-result.html'">🔍</button>
+                </form>
+            </div>
+
+            <input type="checkbox" class="toggler">
+            <div class="hamburger"><div></div></div>
+            <div class="menu">
+                <div>
+                    <ul>
+                        <li><a href='index.html'>Home</a></li>
+                        <li><a href='#'>About</a></li>
+                        <li><a href='#'>Services</a></li>
+                        <li><a href='#'>Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="col-carousel">
+                <div class="row">　</div>
+
+                
+                <div class="card-title">
+                    <div style="font-size: 30px;">
+                        <p><em>새로 추가된 항목</em></p>
+                    </div>
+                </div>
+                
+                
+                <section class="carousel" aria-label="Gallery">
+                    <ol class="carousel__viewport">
+                        <li id="carousel__slide1"
+                            tabindex="0"
+                            class="carousel__slide">
+                            <div class="carousel__snapper">
+                                <a href="#carousel__slide4"
+                                class="carousel__prev">Go to last slide</a>
+                                
+                                <a href="select-monster-energy.html">
+                                    <img class="img" src="../img/monster-energy.png" alt="몬스터 에너지"></a>
+                                <a href="#carousel__slide2"
+                                class="carousel__next">Go to next slide</a>
+                            </div>
+                        </li>
+                        <li id="carousel__slide2"
+                            tabindex="0"
+                            class="carousel__slide">
+                            <div class="carousel__snapper">
+                                <a href="#carousel__slide1"
+                                class="carousel__prev">Go to previous slide</a>
+                                <a href="select-monster-energy-ultra.html">
+                                    <img class="img" src="../img/monster-energy-ultra.png"  alt="몬스터 에너지 울트라">
+                                </a>
+                                <a href="#carousel__slide3"
+                                class="carousel__next">Go to next slide</a>
+                            </div>
+                            
+                        <li id="carousel__slide3"
+                            tabindex="0"
+                            class="carousel__slide">
+                            <div class="carousel__snapper">
+                                <a href="#carousel__slide2"
+                                class="carousel__prev">Go to previous slide</a>
+                                <a href="select-monster-energy-pipeline-punch.html">
+                                    <img class="img" src="../img/monster-energy-pipeline-punch.png" alt="몬스터 에너지 파이프라인 펀치">
+                                </a>
+                                <a href="#carousel__slide4"
+                            class="carousel__next">Go to first slide</a>
+                            </div>                        
+                        </li>
+                        <li id="carousel__slide4"
+                            tabindex="0"
+                            class="carousel__slide">
+                            <div class="carousel__snapper">
+                                <a href="#carousel__slide3"
+                                class="carousel__prev">Go to previous slide</a>
+                                <a href="select-monster-energy-pipeline-punch.html">
+                                    <img class="img" src="../img/monster-energy-pipeline-punch.png" alt="몬스터 에너지 파이프라인 펀치">
+                                </a>
+                                <a href="#carousel__slide1"
+                                class="carousel__next">Go to first slide</a>
+                            </div>                        
+                        </li>
+                    </ol>
+                    <aside class="carousel__navigation">
+                        <ol class="carousel__navigation-list">
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide1"
+                                class="carousel__navigation-button"></a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide2"
+                                class="carousel__navigation-button"></a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide3"
+                                class="carousel__navigation-button"></a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide4"
+                                class="carousel__navigation-button"></a>
+                            </li>
+                        </ol>
+                    </aside>
+                </section>
+
+
+
+            </div>       
+        </div>
+    </main>
+    <footer>
+        
+        <div class="container">
+            <div class="row">
+                <div class = "myinfo">
+                    <em>
+                        <p>
+                            박선우
+                            <br>
+                            Sunwoo Park
+                            <br>
+                            sunup4rk@gmail.com
+                        </p>
+                    </em>            
+                </div> 
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,659 @@
+ul{
+    list-style:none;
+}
+
+body{
+    margin:0;
+}
+
+header{
+    display: flex;
+}
+
+.sticky-top{
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    height: 100px;
+    background-color: #BE8A61;
+    position: -webkit-sticky; 
+    /* Safari에서도 sticky 동작하기 */
+    position: sticky;
+    top: 0;
+    z-index: 100;    
+    display: block;
+}
+
+.title{
+    text-align: left;
+    top: 50%;
+    font-size: x-large;
+}
+
+.search-box{
+    margin-top: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -175%);
+    height: 30px;
+    border-radius: 10px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.search-button {
+  font-size: 18px;
+  border: none;
+  
+  width: 50px;
+  height: 30px;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logo{
+    margin: 10px;
+    height:80px;
+    width: auto;
+    align-items: center;
+}
+
+.logo-text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+    align-items: center;
+    font-family: 'Racing Sans One', cursive;
+}
+
+main{
+    min-height: calc(100vh - 100px);
+    /* calc() 로 vh와 px의 연산이 가능*/
+    background-color: white;
+    flex: 1 1 auto;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start; */
+}
+
+.container{
+    width: 100%;
+    height: auto;
+}
+
+.container-center{
+    width: 100%;
+    align-items: center;
+}
+
+/******************/
+
+@keyframes tonext {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: 100%;
+    }
+    98% {
+      left: 100%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes tostart {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: -300%;
+    }
+    98% {
+      left: -300%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes snap {
+    96% {
+      scroll-snap-align: center;
+    }
+    97% {
+      scroll-snap-align: none;
+    }
+    99% {
+      scroll-snap-align: none;
+    }
+    100% {
+      scroll-snap-align: center;
+    }
+  }
+  
+  /* body {
+    max-width: 37.5rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    font-family: 'Lato', sans-serif;
+  } */
+  
+  * {
+    box-sizing: border-box;
+    scrollbar-color: transparent transparent; /* thumb and track color */
+    scrollbar-width: 0px;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+  }
+  
+  * {
+    -ms-overflow-style: none;
+  }
+  
+  ol, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .carousel {
+    position: relative;
+    padding-top: 103%;
+    filter: drop-shadow(0 0 10px #0003);
+    perspective: 100px;
+  }
+  
+  .carousel__viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    counter-reset: item;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .carousel__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    background-color: #1C1E26;
+    counter-increment: item;
+  }
+  
+  .carousel__slide:nth-child(even) {
+    background-color: #654F73;
+  }
+  
+  .carousel__slide:before {
+    /* content: counter(item); */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-40%,70px);
+    /* color: #fff; */
+    font-size: 2em;
+  }
+  
+  .carousel__snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+  }
+  
+  @media (hover: hover) {
+    .carousel__snapper {
+      animation-name: tonext, snap;
+      animation-timing-function: ease;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+  
+    .carousel__slide:last-child .carousel__snapper {
+      animation-name: tostart, snap;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .carousel__snapper {
+      animation-name: none;
+    }
+  }
+  
+  .carousel:hover .carousel__snapper,
+  .carousel:focus-within .carousel__snapper {
+    animation-name: none;
+  }
+  
+  .carousel__navigation {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
+  
+  .carousel__navigation-list,
+  .carousel__navigation-item {
+    display: inline-block;
+  }
+  
+  .carousel__navigation-button {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #333;
+    background-clip: content-box;
+    border: 0.25rem solid transparent;
+    border-radius: 50%;
+    font-size: 0;
+    transition: transform 0.1s;
+  }
+  
+  .carousel::before,
+  .carousel::after,
+  .carousel__prev,
+  .carousel__next {
+    position: absolute;
+    top: 0;
+    margin-top: 45%;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 0;
+    outline: 0;
+  }
+  
+  .carousel::before,
+  .carousel__prev {
+    left: -1rem;
+  }
+  
+  .carousel::after,
+  .carousel__next {
+    right: -1rem;
+  }
+  
+  .carousel::before,
+  .carousel::after {
+    content: '';
+    z-index: 1;
+    background-color: #333;
+    background-size: 1.5rem 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-align: center;
+    pointer-events: none;
+  }
+  
+  .carousel::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+  }
+  
+  .carousel::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+  }
+
+/***************************************************/  
+
+
+.box{
+    width: 100%;
+    height: 100%;
+}
+
+.row{
+    width: 100%;
+    /* margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col{
+    height: 100%;
+    /* align-content: flex-start; */
+    flex: 0 0 100%;  
+    /* flex-grow,-shrink,-basis */
+}
+
+.col-carousel{
+    height: 65%;
+    flex: 0 0 65%;  
+    margin: auto;
+}
+
+.card{ 
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+}
+
+img{
+    width:100%;
+}
+
+
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.card-title{
+    width: 100%;
+    text-align: center;
+    color:#1C1E26;
+    margin: 0;
+}
+
+a{
+    color: #1C1E26;
+    text-decoration-line:none;
+}
+
+.article{
+    max-width: 100%;
+    align-items: center;
+    padding: 30px;
+}
+
+.article-left{
+  max-width:75%;
+  align-items: center;
+  
+}
+
+table {
+  width: 100%;
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
+  font-size: xx-small;
+}
+th, td {
+  border-bottom: 1px solid #444444;
+  padding: 10px;
+}
+
+footer{
+    margin: 0;
+    height: 96px;
+    background-color: #A47450;
+    bottom: 0;
+    /* z-index: 1; */
+}
+
+.myinfo{
+    margin-left: 20px;
+    display: flex;
+}
+
+@media (max-width: 599px){
+    .logo-text{
+        display: none;
+    }
+}
+
+@media (min-width: 320px){
+    .article-left{
+        max-width: 100%;
+    }
+    .article{
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 480px){
+    .col-2{
+        max-width:50%;
+        flex: 0 0 50%;  
+    }
+    .col-carousel{
+        max-width:55%;
+        flex: 0 0 55%; 
+    }
+    .article-left{
+        max-width: 70%;
+    }
+    .article{
+        max-width: 50%;
+    }
+    table {
+      font-size: x-small;
+    }
+}
+
+@media (min-width: 600px){
+  table {
+    font-size: small;
+  }
+}
+
+@media (min-width: 768px){
+    .col-3{
+        max-width:33.3333%;
+        flex: 0 0 33.3333%;  
+    }
+    .col-carousel{
+        max-width:47%;
+        flex: 0 0 47%; 
+    }
+    .article-left{
+        max-width: 33.3333%;
+    }
+    .article{
+        max-width: 33.3333%;
+    }
+    table {
+      font-size: small;
+    }
+}
+
+@media (min-width: 992px){
+    .col-4{
+        max-width:25%;
+        flex: 0 0 25%;  
+    }
+    .col-carousel{
+        max-width:40%;
+        flex: 0 0 40%; 
+    }
+    .article-left{
+        max-width: 33.3333%;
+    }
+    .article{
+        max-width: 33.3333%;
+    }
+    table {
+      font-size: medium;
+    }
+}
+
+@media (min-width: 1100px){
+    .container {
+        max-width: 1100px;
+        margin: auto;
+    }
+    .container-center{
+        max-width: 1100px;
+    }
+    .col-4{
+        max-width:25%;
+        flex: 0 0 25%;  
+    }
+    .col-carousel{
+        max-width:40%;
+        flex: 0 0 40%; 
+    }
+    .article-left{
+        max-width: 33.3333%;
+    }
+    .article{
+        max-width: 33.3333%;
+    }
+    table {
+      font-size: medium;
+    }
+}
+
+/**********************************************/
+
+
+.toggler{
+/* ALWAYS KEEPING THE TOGGLER OR THE CHECKBOX ON TOP OF EVERYTHING :  */
+  z-index:2;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 25%;
+  right: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.hamburger{
+  position: absolute;
+  top: 25%;
+  right: 0;
+  height: 40px;
+  width: 60px;
+  padding: 0.6rem;
+
+/* FOR DISPLAYING EVERY ELEMENT IN THE CENTER : */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CREATING THE MIDDLE LINE OF THE HAMBURGER : */
+
+.hamburger > div{
+  position: relative;
+  top: 0;
+  left: 0;
+  background: white;
+  height: 2px;
+  width: 60%;
+  transition: all  0.4s ease;
+}
+
+/* CREATING THE TOP AND BOTTOM LINES : 
+TOP AT -10PX ABOVE THE MIDDLE ONE AND BOTTOM ONE IS 10PX BELOW THE MIDDLE: */
+
+.hamburger > div::before,
+.hamburger > div::after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  background: white;
+  width: 100%;
+  height: 2px;
+  transition: all  0.4s ease;
+}
+
+.hamburger > div::after{
+  top: 10px;
+}
+
+/* IF THE TOGGLER IS IN ITS CHECKED STATE, THEN SETTING THE BACKGROUND OF THE MIDDLE LAYER TO COMPLETE BLACK AND OPAQUE :  */
+
+.toggler:checked + .hamburger > div{
+  background: rgba(0,0,0,0);
+}
+
+.toggler:checked + .hamburger > div::before{
+  top: 0;
+  transform: rotate(45deg);
+  background: black;
+}
+
+/* AND ROTATING THE TOP AND BOTTOM LINES :  */
+
+.toggler:checked + .hamburger > div::after{
+  top: 0;
+  transform: rotate(135deg);
+  background: black;
+}
+
+
+/* MAIN MENU WITH THE WHITE BACKGROUND AND THE TEXT :  */
+
+/* .menu{
+  background: #F2B441;
+  width: 0%;
+  height: 30vh; */
+
+/* APPLYING TRANSITION TO THE MENU :  */
+/* 
+  transition: all 0.4s ease;
+} */
+
+/* IF THE TOGGLER IS CHECKED, THEN INCREASE THE WIDTH OF THE MENU TO 30% , CREATING A SMOOTH EFFECT :  */
+
+.toggler:checked ~ .menu{
+  width: 200px;
+}
+
+
+/* STYLING THE LIST :  */
+
+.menu >  div > ul{
+  display:flex;
+  flex-direction: column;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  padding-left: 10px;
+
+/* HIDDEN INITIALLY  :  */
+
+  visibility: hidden;
+}
+
+.menu > div > ul > li{
+  list-style: none;
+  padding: 0.5rem;
+}
+
+.menu > div > ul > li > a{
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: 'Racing Sans One', cursive;
+}
+
+/* WHEN THE TOGGLER IS CHECKED, CHANGE THE VISIBILITY TO VISIBLE :  */
+
+.toggler:checked ~ .menu > div > ul{
+  transition: visibility 0.4s ease;
+  transition-delay: 0.1s;
+  visibility: visible;
+}
+
+.toggler:checked ~ .menu > div > ul > li > a:hover{
+  color: orange;
+}
